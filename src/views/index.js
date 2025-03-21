@@ -20,9 +20,9 @@ export const Views = (props) => {
           <Route exact path="/">
             <Redirect to={APP_PREFIX_PATH} />
           </Route>
-          <Route path={AUTH_PREFIX_PATH}>
+          {/* <Route path={AUTH_PREFIX_PATH}>
             <AuthLayout />
-          </Route>
+          </Route> */}
           <Route path={APP_PREFIX_PATH}>
             <AppLayout location={location}/>
           </Route>
@@ -34,8 +34,7 @@ export const Views = (props) => {
 
 const mapStateToProps = ({ theme, auth }) => {
   const { locale } =  theme;
-  const { token } = auth;
-  return { locale, token }
+  return { locale }
 };
 
 export default withRouter(connect(mapStateToProps)(Views));
