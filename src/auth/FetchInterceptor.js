@@ -23,7 +23,7 @@ service.interceptors.request.use(config => {
   }
 
   if (!jwtToken && !config.headers[PUBLIC_REQUEST_KEY]) {
-		// history.push(ENTRY_ROUTE)
+		history.push(ENTRY_ROUTE)
 		// window.location.reload();
   }
 
