@@ -24,7 +24,7 @@ service.interceptors.request.use(config => {
 
   if (!jwtToken && !config.headers[PUBLIC_REQUEST_KEY]) {
 		history.push(ENTRY_ROUTE)
-		// window.location.reload();
+		window.location.reload();
   }
 
   return config
@@ -51,7 +51,7 @@ service.interceptors.response.use( (response) => {
 		notificationParam.description = 'Please login again'
 		localStorage.removeItem(AUTH_TOKEN)
 		history.push(ENTRY_ROUTE)
-		// window.location.reload();
+		window.location.reload();
 	}
 
 	if (error.response.status === 404) {
